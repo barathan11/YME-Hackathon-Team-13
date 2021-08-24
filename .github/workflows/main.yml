@@ -1,6 +1,6 @@
 name: Commit Emojis
 on:
-  [push, pull_request]
+  push
 jobs:
   change-and-push:
     runs-on: ubuntu-latest
