@@ -13,14 +13,20 @@ app.use(morgan('tiny'))
 app.use(bodyParser.json())
 
 
-mongoose.connect("mongodb://localhost:27017/bara", {
 
+
+    const db = mongoose.connect("mongodb://localhost:27017/bara", 
+    {
+    useUnifiedTopology: true,
     useNewUrlParser: true,
-        useUnifiedTopology: true 
-    });    
-
+    useCreateIndex: true,
+    }).then(() => {
+    console.log("Connected To Mongodb DataBase after fucking years");
+    }).catch((err) => {
+    console.log("DataBase Connection Error " + err);
+    });
  
-app.use('/api/userActivities', userActivityList)
+app.use('/routes/api/userActivities', userActivityList)
  
 if (process.env.NODE_ENV === 'production') {
    app.use(express.static('client/dist'))
