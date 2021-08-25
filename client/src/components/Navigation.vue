@@ -9,7 +9,9 @@
             text-color="#fff"
             active-text-color="#ffd04b"
         >
-            <el-menu-item index="1">Dashboard</el-menu-item>
+            <el-menu-item index="1">
+                <router-link :to="{ name: 'Dashboard' }">Dashboard</router-link>
+            </el-menu-item>
             <el-menu-item index="2">
                 <router-link :to="{ name: 'Profile' }">Profile</router-link>
             </el-menu-item>
