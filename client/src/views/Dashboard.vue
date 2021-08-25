@@ -1,16 +1,17 @@
 <template>
     <div class="dashboard">
         <div class="activity-box">
-            <h1>Create Your Workout</h1>
+            <h2>Today's Activity</h2>
             <p>
                 <br />
                 <br />
-                <strong> Exercise Type: Running  </strong>
+                <strong>Type: Running</strong>
                 <br />
             </p>
             <br />
             <br />
-                Pick your time below!
+            <p>Pick your time below!</p>
+            <br />
             <div class="timepicker">
                 <TimePicker />
             </div>
@@ -28,30 +29,25 @@ export default {
 
 <style lang="scss" scoped>
 h1 {
-  font-family: 'Trebuchet MS', sans-serif;
+    // font-family: 'Trebuchet MS', sans-serif;
 }
 .activity-box {
-    padding: 50px 5%;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    background-color: #E0EEEE;
+    padding: 30px 10px 10px 10px;
+    margin: 20px auto;
+    border-radius: 18px;
+    background-color: #e0eeee;
     height: 220px;
+    width: 90vw;
+    max-width: 500px;
     text-align: center;
-    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 
     .timepicker {
-        display: grid;
-        justify-items: center;
-        grid-row-gap: 23px;
-        width: 100%;
-        padding-top: 25px;
-    }
-
-    .controls {
-        display: flex;
-        justify-content: space-between;
-
-        width: 187px;
+        // display: grid;
+        // justify-items: center;
+        // grid-row-gap: 23px;
+        // // width: 100%;
+        // padding-top: 25px;
     }
 }
 </style>
