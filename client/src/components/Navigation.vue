@@ -13,6 +13,9 @@
             <el-menu-item index="2">
                 <router-link :to="{ name: 'Profile' }">Profile</router-link>
             </el-menu-item>
+            <el-menu-item index="3">
+                <router-link :to="{ name: 'Map' }">Map</router-link>
+            </el-menu-item>
         </el-menu>
     </div>
 </template>

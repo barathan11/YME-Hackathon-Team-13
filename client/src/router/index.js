@@ -3,6 +3,7 @@ import Dashboard from '@/views/Dashboard.vue';
 import Profile from '@/views/Profile.vue';
 import Interests from '@/views/Interests.vue';
 import YourGoal from '@/views/YourGoal.vue';
+import Map from '@/views/Map.vue';
 
 const routes = [
     {
@@ -24,6 +25,11 @@ const routes = [
         path: '/your-goal',
         name: 'YourGoal',
         component: YourGoal,
+    },
+    {
+        path: '/map',
+        name: 'Map',
+        component: Map,
     },
 ];
 
