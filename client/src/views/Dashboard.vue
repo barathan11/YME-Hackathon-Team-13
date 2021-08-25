@@ -5,10 +5,12 @@
             <p>
                 <br />
                 <br />
-                Exercise Type: Running
+                <strong> Exercise Type: Running  </strong>
+                <br />
             </p>
-
             <br />
+            <br />
+                Pick your time below!
             <div class="timepicker">
                 <TimePicker />
             </div>
@@ -25,10 +27,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h1 {
+  font-family: 'Trebuchet MS', sans-serif;
+}
 .activity-box {
     padding: 50px 5%;
-    background-color: #e0eeee;
-    height: 500px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background-color: #E0EEEE;
+    height: 220px;
+    text-align: center;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
 
     .timepicker {
         display: grid;
