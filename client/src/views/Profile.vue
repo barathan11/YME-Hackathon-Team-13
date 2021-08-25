@@ -61,7 +61,7 @@
                 </div>
             </router-link>
             <div class="info__signout">
-                <p>Sign Out</p>
+                <p @click="handleSignOut">Sign Out</p>
             </div>
         </div>
     </div>
@@ -72,6 +72,16 @@ import { Edit, ArrowRightBold } from '@element-plus/icons';
 export default {
     name: 'Profile',
     components: { Edit, ArrowRightBold },
+    setup() {
+        // const user = {
+        //     name: 'James Moore',
+        //     email: 'jdsnsniovj',
+        // };
+        // const emailValue = '';
+        // const handleSignOut = () => {
+        //     console.log('Sign out successful');
+        // };
+    },
 };
 </script>
 
