@@ -14,7 +14,6 @@ app.use(bodyParser.json())
 
 
 
-
     const db = mongoose.connect("mongodb://localhost:27017/bara", 
     {
     useUnifiedTopology: true,
@@ -25,7 +24,35 @@ app.use(bodyParser.json())
     }).catch((err) => {
     console.log("DataBase Connection Error " + err);
     });
- 
+
+
+    async function main(){
+
+        const uri = "mongodb+srv://bara:bara123@cluster0.xtbxt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+     
+    
+        const client = new MongoClient(uri);
+     
+        try {
+            // Connect to the MongoDB cluster
+            await client.connect();
+     
+            // Make the appropriate DB calls
+            await  listDatabases(client);
+     
+        } catch (e) {
+            console.error(e);
+        } finally {
+            await client.close();
+        }
+    }
+    async function listDatabases(client){
+        databasesList = await client.db().admin().listDatabases();
+     
+        console.log("Databases:");
+        databasesList.databases.forEach(db => console.log(` - ${db.name}`));
+    };
+     
 app.use('/routes/api/userActivities', userActivityList)
  
 if (process.env.NODE_ENV === 'production') {
