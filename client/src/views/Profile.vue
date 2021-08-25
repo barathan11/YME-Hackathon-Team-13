@@ -13,7 +13,7 @@
                     {{ user.full_name }}
                 </div>
                 <div class="info__item--icon">
-                    <el-icon size="22">
+                    <el-icon :size="22">
                         <edit />
                     </el-icon>
                 </div>
@@ -24,7 +24,7 @@
                     {{ user.email_id }}
                 </div>
                 <div class="info__item--icon">
-                    <el-icon size="22">
+                    <el-icon :size="22">
                         <edit />
                     </el-icon>
                 </div>
@@ -35,7 +35,7 @@
                     {{ user.dob }}
                 </div>
                 <div class="info__item--icon">
-                    <el-icon size="22">
+                    <el-icon :size="22">
                         <edit />
                     </el-icon>
                 </div>
@@ -44,7 +44,7 @@
                 <div class="info__item">
                     <div class="info__item--text">Interests</div>
                     <div class="info__item--icon">
-                        <el-icon size="22">
+                        <el-icon :size="22">
                             <arrow-right-bold />
                         </el-icon>
                     </div>
@@ -54,7 +54,7 @@
                 <div class="info__item">
                     <div class="info__item--text">Your Goal</div>
                     <div class="info__item--icon">
-                        <el-icon size="22">
+                        <el-icon :size="22">
                             <arrow-right-bold />
                         </el-icon>
                     </div>
