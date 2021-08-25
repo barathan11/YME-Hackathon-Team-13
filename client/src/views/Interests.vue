@@ -1,11 +1,30 @@
 <template>
     <div class="interests">
+        <router-link :to="{ name: 'Profile' }">
+            <div class="return__button">
+                <el-icon size="15">
+                    <arrow-left-bold />
+                </el-icon>
+                <p>Back to profile</p>
+            </div>
+        </router-link>
+        <h3>Select your general interests</h3>
         <div class="interests__options">
             <el-checkbox
-                v-for="general_interest in generalInterests"
-                :key="general_interest"
+                v-for="generalInterest in generalInterests"
+                :key="generalInterest"
                 v-model="checked1"
-                :label="general_interest"
+                :label="generalInterest"
+                border
+            ></el-checkbox>
+        </div>
+        <h3>Select your fitness interests</h3>
+        <div class="interests__options">
+            <el-checkbox
+                v-for="fitnessInterests in fitnessInterests"
+                :key="fitnessInterests"
+                v-model="checked1"
+                :label="fitnessInterests"
                 border
             ></el-checkbox>
         </div>
@@ -13,9 +32,10 @@
 </template>
 
 <script>
+import { ArrowLeftBold } from '@element-plus/icons';
 export default {
     name: 'Interests',
-    components: {},
+    components: { ArrowLeftBold },
     setup() {
         const generalInterests = [
             'Sports',
@@ -35,8 +55,23 @@ export default {
             'Languages',
         ];
 
+        const fitnessInterests = [
+            'Walking',
+            'Jogging',
+            'Running',
+            'Hiking',
+            'Cycling',
+            'Tai Chi',
+            'Skateboarding',
+            'Equestrian',
+            'Climbing',
+            'Tennis',
+            'Badminton',
+        ];
+
         return {
             generalInterests,
+            fitnessInterests,
         };
     },
 };
@@ -44,6 +79,19 @@ export default {
 
 <style lang="scss" scoped>
 .interests {
+    padding: 20px 10px;
+    .return__button {
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+        p {
+            margin-left: 5px;
+        }
+    }
+    h3 {
+        text-align: center;
+        margin: 25px 0 15px 0;
+    }
     &__options {
         display: flex;
         flex-wrap: wrap;
@@ -51,8 +99,6 @@ export default {
     }
 }
 .el-checkbox {
-    margin: 0;
-    margin-left: 0 !important;
-    margin-bottom: 10px;
+    margin: 0 5px 10px 5px !important;
 }
 </style>

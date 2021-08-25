@@ -50,14 +50,16 @@
                     </div>
                 </div>
             </router-link>
-            <div class="info__item">
-                <div class="info__item--text">Your Goal</div>
-                <div class="info__item--icon">
-                    <el-icon size="22">
-                        <arrow-right-bold />
-                    </el-icon>
+            <router-link :to="{ name: 'YourGoal' }">
+                <div class="info__item">
+                    <div class="info__item--text">Your Goal</div>
+                    <div class="info__item--icon">
+                        <el-icon size="22">
+                            <arrow-right-bold />
+                        </el-icon>
+                    </div>
                 </div>
-            </div>
+            </router-link>
             <div class="info__signout">
                 <p>Sign Out</p>
             </div>

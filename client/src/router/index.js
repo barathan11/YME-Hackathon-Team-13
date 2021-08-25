@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Dashboard from '@/views/Dashboard.vue';
 import Profile from '@/views/Profile.vue';
 import Interests from '@/views/Interests.vue';
+import YourGoal from '@/views/YourGoal.vue';
 
 const routes = [
     {
@@ -15,9 +16,14 @@ const routes = [
         component: Profile,
     },
     {
-        path: '/Interests',
+        path: '/interests',
         name: 'Interests',
         component: Interests,
+    },
+    {
+        path: '/your-goal',
+        name: 'YourGoal',
+        component: YourGoal,
     },
 ];
 
