@@ -3,14 +3,14 @@
         <div class="profile__top">
             <div class="profile__top--text">
                 <h3>Your Profile</h3>
-                <h1>Hi James</h1>
+                <h1>Hi {{ user.preferred_name }}</h1>
             </div>
         </div>
         <div class="profile__basic-info">
             <div class="info__item">
                 <div class="info__item--text">
                     <span class="info__item--heading">Name</span>
-                    James Moore
+                    {{ user.full_name }}
                 </div>
                 <div class="info__item--icon">
                     <el-icon size="22">
@@ -21,7 +21,7 @@
             <div class="info__item">
                 <div class="info__item--text">
                     <span class="info__item--heading">Email</span>
-                    moore@gmail.com
+                    {{ user.email_id }}
                 </div>
                 <div class="info__item--icon">
                     <el-icon size="22">
@@ -32,7 +32,7 @@
             <div class="info__item">
                 <div class="info__item--text">
                     <span class="info__item--heading">Date of Birth</span>
-                    12/12/1997
+                    {{ user.dob }}
                 </div>
                 <div class="info__item--icon">
                     <el-icon size="22">
@@ -73,14 +73,21 @@ export default {
     name: 'Profile',
     components: { Edit, ArrowRightBold },
     setup() {
-        // const user = {
-        //     name: 'James Moore',
-        //     email: 'jdsnsniovj',
-        // };
-        // const emailValue = '';
-        // const handleSignOut = () => {
-        //     console.log('Sign out successful');
-        // };
+        const user = {
+            preferred_name: 'James',
+            full_name: 'James Moore',
+            email_id: 'moore@gmail.com',
+            dob: '12/12/1997',
+        };
+
+        const handleSignOut = () => {
+            console.log('Sign out successful');
+        };
+
+        return {
+            user,
+            handleSignOut,
+        };
     },
 };
 </script>
@@ -127,6 +134,9 @@ export default {
             margin: 20px;
             font-weight: 600;
             color: rgb(228, 0, 0);
+            p {
+                cursor: pointer;
+            }
         }
     }
 }
