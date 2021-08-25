@@ -1,7 +1,9 @@
 <template>
     <div>
         <Navigation />
-        <router-view />
+        <div id="app-content">
+            <router-view />
+        </div>
     </div>
 </template>
 
@@ -34,5 +36,10 @@ a:hover {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
+}
+#app-content {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 </style>
