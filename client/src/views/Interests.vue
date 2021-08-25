@@ -50,6 +50,7 @@
 
 <script>
 import { ref } from 'vue';
+import router from '@/router';
 import { ArrowLeftBold } from '@element-plus/icons';
 export default {
     name: 'Interests',
@@ -95,6 +96,11 @@ export default {
             // write to DB
             console.log(generalInterestsValues.value);
             console.log(fitnessInterestsValues.value);
+
+            // redirect to profile
+            router.push({
+                name: 'Profile',
+            });
         };
 
         return {

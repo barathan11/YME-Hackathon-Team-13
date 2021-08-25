@@ -17,18 +17,34 @@
             </el-radio-group>
         </div>
         <p>We will progressively guide you towards your goal!</p>
+        <el-button type="primary" class="submit-button" @click="updateGoal">
+            Save
+        </el-button>
     </div>
 </template>
 
 <script>
 import { ref } from 'vue';
+import router from '@/router';
 import { ArrowLeftBold } from '@element-plus/icons';
 export default {
     name: 'YourGoal',
     components: { ArrowLeftBold },
     setup() {
+        // fetch this data from DB
         const goalValue = ref('Medium');
-        return { goalValue };
+
+        const updateGoal = () => {
+            // write to DB
+            console.log(goalValue.value);
+
+            // redirect to profile
+            router.push({
+                name: 'Profile',
+            });
+        };
+
+        return { goalValue, updateGoal };
     },
 };
 </script>
@@ -36,6 +52,9 @@ export default {
 <style lang="scss" scoped>
 .goal {
     padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     .return__button {
         margin-left: 10px;
         display: flex;
@@ -60,5 +79,8 @@ export default {
 }
 .el-checkbox {
     margin: 0 5px 10px 5px !important;
+}
+.submit-button {
+    margin: 20px auto;
 }
 </style>
