@@ -9,29 +9,47 @@
             </div>
         </router-link>
         <h3>Select your general interests</h3>
-        <div class="interests__options">
-            <el-checkbox
-                v-for="generalInterest in generalInterests"
-                :key="generalInterest"
-                v-model="checked1"
-                :label="generalInterest"
-                border
-            ></el-checkbox>
+        <div>
+            <el-checkbox-group
+                class="interests__options"
+                v-model="generalInterestsValues"
+            >
+                <el-checkbox
+                    v-for="generalInterest in generalInterests"
+                    :key="generalInterest"
+                    v-model="checked1"
+                    :label="generalInterest"
+                    border
+                ></el-checkbox>
+            </el-checkbox-group>
         </div>
         <h3>Select your fitness interests</h3>
-        <div class="interests__options">
-            <el-checkbox
-                v-for="fitnessInterests in fitnessInterests"
-                :key="fitnessInterests"
-                v-model="checked1"
-                :label="fitnessInterests"
-                border
-            ></el-checkbox>
+        <div>
+            <el-checkbox-group
+                class="interests__options"
+                v-model="fitnessInterestsValues"
+            >
+                <el-checkbox
+                    v-for="fitnessInterests in fitnessInterests"
+                    :key="fitnessInterests"
+                    v-model="checked1"
+                    :label="fitnessInterests"
+                    border
+                ></el-checkbox>
+            </el-checkbox-group>
         </div>
+        <el-button
+            type="primary"
+            class="submit-button"
+            @click="updateInterests"
+        >
+            Save
+        </el-button>
     </div>
 </template>
 
 <script>
+import { ref } from 'vue';
 import { ArrowLeftBold } from '@element-plus/icons';
 export default {
     name: 'Interests',
@@ -69,9 +87,22 @@ export default {
             'Badminton',
         ];
 
+        // Populate this data from DB
+        const generalInterestsValues = ref([]);
+        const fitnessInterestsValues = ref([]);
+
+        const updateInterests = () => {
+            // write to DB
+            console.log(generalInterestsValues.value);
+            console.log(fitnessInterestsValues.value);
+        };
+
         return {
             generalInterests,
             fitnessInterests,
+            generalInterestsValues,
+            fitnessInterestsValues,
+            updateInterests,
         };
     },
 };
@@ -80,6 +111,9 @@ export default {
 <style lang="scss" scoped>
 .interests {
     padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     .return__button {
         margin-left: 10px;
         display: flex;
@@ -96,6 +130,9 @@ export default {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+    }
+    .submit-button {
+        margin: 20px auto;
     }
 }
 .el-checkbox {
