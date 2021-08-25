@@ -7,11 +7,10 @@
             @select="handleSelect"
             background-color="#545c64"
             text-color="#fff"
-            active-text-color="#ffd04b"
-        >
-            <el-menu-item index="1">Processing Center</el-menu-item>
+            active-text-color="#ffd04b">
+            <el-menu-item index="1">Dashboard</el-menu-item>
             <el-menu-item index="2">
-                <a href="https://www.ele.me" target="_blank">Orders</a>
+                <a href="https://www.ele.me" target="_blank">Profile</a>
             </el-menu-item>
         </el-menu>
     </div>
