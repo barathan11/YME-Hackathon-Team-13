@@ -8,12 +8,15 @@
                 <strong> Exercise Type: Running  </strong>
                 <br />
             </p>
-            <br />
-            <br />
-                Pick your time below!
+            <br /><br />
+             Recommended Duration: 1 Hour
+            <br /><br /><br />
+             Pick your time below!
             <div class="timepicker">
                 <TimePicker />
             </div>
+            <br /><br />
+            <button type="submit" @click="handleSubmit" class="enter-button">></button>
         </div>
     </div>
 </template>
@@ -35,9 +38,14 @@ h1 {
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     background-color: #E0EEEE;
-    height: 220px;
+    height: 330px;
     text-align: center;
     box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+
+    .duration-input {
+    height: 15px;
+    width: 40%;
+    }
 
     .timepicker {
         display: grid;
@@ -46,11 +54,20 @@ h1 {
         width: 100%;
         padding-top: 25px;
     }
-
+    .enter-button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 8px;
+    }
     .controls {
         display: flex;
         justify-content: space-between;
-
         width: 187px;
     }
 }
