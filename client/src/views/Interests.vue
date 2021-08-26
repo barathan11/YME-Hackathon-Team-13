@@ -1,5 +1,5 @@
 <template>
-    <div class="interests">
+    <div class="interests limit-width">
         <router-link :to="{ name: 'Profile' }">
             <div class="return__button">
                 <el-icon size="15">

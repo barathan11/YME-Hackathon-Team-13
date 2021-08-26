@@ -5,9 +5,9 @@
             class="el-menu-demo"
             mode="horizontal"
             @select="handleSelect"
-            background-color="#545c64"
+            background-color="#0c1b32"
             text-color="#fff"
-            active-text-color="#ffd04b"
+            active-text-color="#9eb8ff"
         >
             <el-menu-item index="1">
                 <router-link :to="{ name: 'Dashboard' }">Dashboard</router-link>

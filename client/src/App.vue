@@ -37,7 +37,7 @@ a:hover {
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
 }
-#app-content {
+.limit-width {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;

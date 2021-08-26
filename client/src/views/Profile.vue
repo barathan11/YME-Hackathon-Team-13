@@ -1,12 +1,12 @@
 <template>
     <div class="profile">
         <div class="profile__top">
-            <div class="profile__top--text">
+            <div class="profile__top--text limit-width">
                 <h3>Your Profile</h3>
                 <h1>Hi {{ user.preferred_name }}</h1>
             </div>
         </div>
-        <div class="profile__basic-info">
+        <div class="profile__basic-info limit-width">
             <div class="info__item">
                 <div class="info__item--text">
                     <span class="info__item--heading">Name</span>
@@ -69,16 +69,13 @@
 
 <script>
 import { Edit, ArrowRightBold } from '@element-plus/icons';
+import { reactive } from 'vue';
+import store from '@/store';
 export default {
     name: 'Profile',
     components: { Edit, ArrowRightBold },
     setup() {
-        const user = {
-            preferred_name: 'James',
-            full_name: 'James Moore',
-            email_id: 'moore@gmail.com',
-            dob: '12/12/1997',
-        };
+        const user = reactive(store.state.user);
 
         const handleSignOut = () => {
             console.log('Sign out successful');
