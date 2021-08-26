@@ -2,7 +2,7 @@
 
 ## Project: ActivateMY
 
-Reactivating Malaysia safely by reintroducing an active & social lifestyle
+Reactivating Malaysia safely by reintroducing an active & social lifestyle.
 
 <p align="center">
   <img src="src/assets/dashboard.png" alt="Dashboard" width="200">
